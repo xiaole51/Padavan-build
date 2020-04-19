@@ -96,7 +96,7 @@ jobs:
         #sed -i '/自定义项/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE/d' .config
-    	sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION/d' .config
+	sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION/d' .config
 	sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL/d' .config
 	sed -i '/CONFIG_FIRMWARE_INCLUDE_NFSD/d' .config
         #echo "自定义项=y" >> .config
