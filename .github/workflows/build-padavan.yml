@@ -101,6 +101,8 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NFSD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DROPBEAR/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DROPBEAR_FAST_CODE/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIDLNA/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FIREFLY/d' .config
         #echo "自定义项=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y" >> .config
@@ -109,6 +111,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_NFSD=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR_FAST_CODE=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_MINIDLNA=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FIREFLY=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
