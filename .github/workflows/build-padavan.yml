@@ -114,6 +114,13 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_MINIDLNA=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_FIREFLY=y" >> .config
         #########################################################################################
+        #配置内核模块集成,先删除再添加
+        sed -i '/# CONFIG_USB_SERIAL_FTDI_SIO  is not set/d' /opt/rt-n56u/trunk/configs/boards/$TNAME/kernel-3.4.x.config
+        sed -i '/# CONFIG_USB_SERIAL_CH341  is not set/d' /opt/rt-n56u/trunk/configs/boards/$TNAME/kernel-3.4.x.config
+        #内核模块添加
+        echo "CONFIG_USB_SERIAL_FTDI_SIO=m" >> /opt/rt-n56u/trunk/configs/boards/$TNAME/kernel-3.4.x.config
+        echo "CONFIG_USB_SERIAL_CH341=m" >> /opt/rt-n56u/trunk/configs/boards/$TNAME/kernel-3.4.x.config        
+        #########################################################################################       
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
